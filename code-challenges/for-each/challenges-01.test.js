@@ -3,6 +3,8 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
+// PASSED
+
 Write a function named greeting that takes in a string and returns the string in all uppercase letters.
 
 Then, write a function named speaker that takes in a string and a callback function. The speaker function should return the string in all uppercase letters only by invoking the callback.
@@ -18,6 +20,8 @@ const speaker = (message, callback) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
+
+// PASSED
 
 Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
 
