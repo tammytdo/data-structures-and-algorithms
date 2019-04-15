@@ -56,11 +56,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  // Solution code here...
+  if ((num % 3) == 2) {
+    arr.pop();
+  }
 };
 
 const removeElements = (arr, callback) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    callback(i);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,9 +73,14 @@ CHALLENGE 4
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const removeWithForEach = (arr, callback) => {
-  // Solution code here...
-};
+// const removeWithForEach = (arr, callback) => {
+//   arr.forEach(callback {
+//     if (num % 3 == 2) {
+//       arr.pop();
+//     }
+//   return arr;
+//   }
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -105,8 +114,15 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  for (let i = 0; i < availableItems.length; i++) {
+    if (availableItems[i].available == 'true') {
+      groceryList.push(availableItems[i].name);
+    }
+  }
 };
+
+let groceryList = [];
+groceryList.forEach(createList);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -121,9 +137,20 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
+let outputArray = [];
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 3) {
+      outputArray.push('Fizz');
+    } if (arr[i] % 5) {
+      outputArray.push('Buzz');
+    } if (arr[i] % 3 && arr[i] % 5) {
+      outputArray.push('Fizz Buzz');
+    } else { 
+      outputArray.push(i);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
