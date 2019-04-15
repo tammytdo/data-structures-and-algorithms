@@ -49,6 +49,7 @@ const addNumbers = (num, arr, times, callback) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
+// PASSED
 
 Write a function named removeOne that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array.
 
@@ -60,31 +61,33 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  if ((num % 3) == 2) {
+  if (num % 3 === 2) {
     arr.pop();
   }
+  return arr;
 };
 
 const removeElements = (arr, callback) => {
   for (let i = 0; i < arr.length; i++) {
-    callback(i);
+    callback(arr[i], arr);
+    // console.log(callback(arr[i], arr));
   }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
+// PASSED
 
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 
-// const removeWithForEach = (arr, callback) => {
-//   arr.forEach(callback {
-//     if (num % 3 == 2) {
-//       arr.pop();
-//     }
-//   return arr;
-//   }
-// };
+const removeWithForEach = (arr, callback) => {
+  arr.forEach(function (item, idx) {
+    callback(item, idx);
+  });
+  return arr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -181,14 +184,14 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should remove three elements from the array', () => {
     expect(removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
