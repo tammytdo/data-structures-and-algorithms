@@ -14,9 +14,7 @@ const forLoopTwoToThe = (arr) => {
   let newArray = [];
 
   for (let i = 0; i < arr.length; i++) {
-    newArray.push(arr[i] ** i);
-    // newArray.push(arr[i] ** 2);
-    // newArray.push(2 * arr[i]);
+    newArray.push(2 ** arr[i]);
   }
   return newArray;
 };
@@ -30,8 +28,8 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   let newArray = [];
 
-  arr.forEach(value => {
-    newArray.push(value ** arr[i]);
+  arr.forEach((value, idx) => {
+    newArray.push(2 ** arr[idx]);
   })
   return newArray;
 };
@@ -43,7 +41,12 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  // let newArray = [];
+  // let productOfTwo = arr.map(2 ** arr.values());
+  // newArray.push(productOfTwo);
+  // return newArray;
+
+  return arr.map((values, idx) => 2 ** values);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -200,7 +203,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
