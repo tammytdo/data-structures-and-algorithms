@@ -22,14 +22,23 @@ const firstLetters = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named findHappiness that takes in an array of strings and returns an array containing only the strings from the input array that contain ":)".
+Write a function named findHappiness 
+- that takes in an array of strings and 
+- returns an array containing only the strings from the input array that contain ":)".
 
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter(string => string.includes(':)') );
 };
+
+// Why can't I do this?? I get an empty array
+// const findHappiness = (arr) => {
+//   return arr.filter(string => {
+//     string.includes(':)');
+//   });
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -161,7 +170,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return only the strings that contain smiley faces', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
