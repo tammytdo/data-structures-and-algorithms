@@ -22,38 +22,78 @@ const firstLetters = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named findHappiness that takes in an array of strings and returns an array containing only the strings from the input array that contain ":)".
+Write a function named findHappiness 
+- that takes in an array of strings and 
+- returns an array containing only the strings from the input array that contain ":)".
 
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter(string => string.includes(':)') );
 };
+
+// Why can't I do this?? I get an empty array
+// const findHappiness = (arr) => {
+//   return arr.filter(string => {
+//     string.includes(':)');
+//   });
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
+Write a function named standardizePhoneNumbers 
+- that takes in an array of phone number strings 
+- strings in (XXX) XXX-XXXX format and 
+- returns an array with the phone number strings in XXXXXXXXXX format.
 
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  let condensedPhone = [];
+
+  for (let i in arr) {
+    let first = arr[i].slice(1,4);
+    let mid = arr[i].slice(6,9);
+    let last = arr[i].slice(10,14);
+    condensedPhone.push(first + mid + last);
+  }
+  return condensedPhone;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
+Write a function named onlyOddChars 
+- onlyOddChars takes in a string
+- onlyOddChars returns only the odd-index characters from that string.
 
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let newString = '';
+
+  for (let i in str) {
+    if (i % 2 === 1) {
+      newString += str[i];
+      i++;
+    }
+  }
+  return newString;
 };
+
+
+// const onlyOddChars = (str) => {
+//   let newString = '';
+
+//   for (let i = 1; i < str.length; i+2) {
+//     newString = (newString + str[i]);
+//   }
+//   return newString;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -161,7 +201,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return only the strings that contain smiley faces', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -172,7 +212,7 @@ xdescribe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return a standardized set of phone numbers', () => {
     const nums = ['(123) 456-7890', '(222) 222-2222'];
 
@@ -181,7 +221,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should only return the odd indexed characters from the string', () => {
     expect(onlyOddChars('0123456789')).toStrictEqual('13579');
     expect(onlyOddChars('abcd')).toStrictEqual('bd');
