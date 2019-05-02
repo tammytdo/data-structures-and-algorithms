@@ -74,8 +74,21 @@ const gruffaloCrumble = {
   ]
 };
 
-const splitFoods = (recipe) => {
-  // solution code here
+const listFoods = (recipe) => {
+  let result = [];
+  const ingredients = recipe.ingredients;
+
+  for (let i in ingredients) {
+    let result = ingredients[i];
+    let firstIndex = result.indexOf(' ') + 1;
+    result = result.slice(firstIndex);
+
+    let secondIndex = result.indexOf(' ') + 1;
+    result = result.slice(secondIndex);
+
+    ingredients[i] = result;
+  }
+  result = ingredients;
   return result;
 };
 
@@ -87,19 +100,17 @@ Write a function named splitFoods that uses split to produce the same output as 
 You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
-const listFoods = (gruffaloCrumble) => {
-let result = [];
-
-//Loop through each index
-for (let i in gruffaloCrumble.ingredients.length) {
-  // With each index which is a string, turn it into an array. Split the array by spaces. .
-  let indexToArray = Array.of(gruffaloCrumble.ingredients[i]).split(' ');
-  // Identify the last item in the new individual arrays. Push it into the result.
-  result.push(indexToArray[indexToArray.length - 1]);
-  // Result is now an array of every ingredient.
+const splitFoods = (recipe) => {
+  let result = [];
+  recipe.ingredients.forEach( ingredient => {
+    let splitIngredient = ingredient.split(' ');
+    let slicedIngredient = splitIngredient.slice(2);
+    let joinIngredient = slicedIngredient.join(' ');
+    result.push(joinIngredient);
+  })
   return result;
-  }
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -129,10 +140,13 @@ For example:
   removeEvenValues(integers);
   console.log(integers) will print [1, 3, 5]
 ------------------------------------------------------------------------------------------------ */
-
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  let odds = arr.filter(num => num % 2);
+  return odds;
 };
+
+// Split, join, slice, splice
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -222,14 +236,14 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return a list of foods', () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
@@ -242,7 +256,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);

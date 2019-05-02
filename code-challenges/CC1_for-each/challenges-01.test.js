@@ -49,6 +49,7 @@ const addNumbers = (num, arr, times, callback) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
+
 // PASSED
 
 Write a function named removeOne that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array.
@@ -61,31 +62,28 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  if (num % 3 === 2) {
+  if ((num % 3) === 2) {
     arr.pop();
   }
-  return arr;
 };
 
 const removeElements = (arr, callback) => {
   for (let i = 0; i < arr.length; i++) {
     callback(arr[i], arr);
-    // console.log(callback(arr[i], arr));
   }
   return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
+
 // PASSED
 
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  arr.forEach(item => {
-    callback(item, arr);
-  });
+  arr.forEach((value) => callback(value, arr));
   return arr;
 };
 
@@ -121,15 +119,8 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  for (let i = 0; i < availableItems.length; i++) {
-    if (availableItems[i].available == 'true') {
-      groceryList.push(availableItems[i].name);
-    }
-  }
+  // Solution code here...
 };
-
-let groceryList = [];
-groceryList.forEach(createList);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -144,20 +135,9 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
-let outputArray = [];
 
 const fizzbuzz = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 3) {
-      outputArray.push('Fizz');
-    } if (arr[i] % 5) {
-      outputArray.push('Buzz');
-    } if (arr[i] % 3 && arr[i] % 5) {
-      outputArray.push('Fizz Buzz');
-    } else { 
-      outputArray.push(i);
-    }
-  }
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
