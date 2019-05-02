@@ -40,14 +40,11 @@ const citiesAtoJ = (arr) => {
   let regex = /^[A-J]/;
   let returnedCities = [];
 
-  arr.forEach(city =>{
-    if(regex.test(city)){
+  arr.forEach(city => {
+    if(regex.test(city)) {
       returnedCities.push(city);
     } 
-    
-
   });
-
   return returnedCities;
 };
 
@@ -82,6 +79,8 @@ const noPunctuation = str => {
   let regex = /[A-Z][a-z]+/g;
   str.match(regex);
   return str;
+}
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
