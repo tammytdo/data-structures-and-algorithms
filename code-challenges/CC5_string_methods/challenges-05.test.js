@@ -21,7 +21,6 @@ const howMuchPencil = (str) => {
   return result;
 };
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -35,6 +34,7 @@ const wordsToCharList = (arr) => {
   return newArrayWithSplit;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -47,10 +47,11 @@ Use slice for this function, maybe more than once. The Array.indexOf() method ma
 Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
-
 const gruffaloCrumble = {
   name: 'How to make a Gruffalo Crumble',
-  ingredients: ['1 medium-sized Gruffalo', '8 pounds oats',
+  ingredients: [
+    '1 medium-sized Gruffalo',
+    '8 pounds oats',
     '2 pounds brown sugar',
     '4 pounds flour',
     '2 gallons pure maple syrup',
@@ -74,21 +75,20 @@ const gruffaloCrumble = {
   ]
 };
 
+
 const listFoods = (recipe) => {
   let result = [];
-  const ingredients = recipe.ingredients;
+  // Solution code here...
+  let ingredients = recipe.ingredients;
 
   for (let i in ingredients) {
-    let result = ingredients[i];
-    let firstIndex = result.indexOf(' ') + 1;
-    result = result.slice(firstIndex);
+    let firstSpaceIndex = ingredients[i].indexOf(' ') + 1;
+    let stringWithoutNumber = ingredients[i].slice(firstSpaceIndex);
 
-    let secondIndex = result.indexOf(' ') + 1;
-    result = result.slice(secondIndex);
-
-    ingredients[i] = result;
+    let secondSpaceIndex = stringWithoutNumber.indexOf(' ') +1;
+    let stringWithoutMeasurement = stringWithoutNumber.slice(secondSpaceIndex);
+    result.push(stringWithoutMeasurement);
   }
-  result = ingredients;
   return result;
 };
 
@@ -102,15 +102,17 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  recipe.ingredients.forEach( ingredient => {
-    let splitIngredient = ingredient.split(' ');
-    let slicedIngredient = splitIngredient.slice(2);
-    let joinIngredient = slicedIngredient.join(' ');
-    result.push(joinIngredient);
-  })
+  let ingredients = recipe.ingredients;
+  
+  for (let i in ingredients) {
+    // let splitOnSpaces = ingredients[i].split(' ');
+    // let sliceIngredients = splitOnSpaces.slice(2, );
+    // let joinIngredientString = sliceIngredients.join(' ')
+    // result.push(joinIngredientString);
+    result.push(ingredients[i].split(' ').slice(2, ).join(' '));
+  }
   return result;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -124,7 +126,13 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  let steps = recipe.steps;
+
+  for (let i in steps) {
+    let isolateStepFromExtra = steps[i].indexOf(' ');
+    let singleStep = steps[i].slice(0, isolateStepFromExtra)
+    result.push(singleStep);
+  }
   return result;
 };
 
@@ -140,13 +148,10 @@ For example:
   removeEvenValues(integers);
   console.log(integers) will print [1, 3, 5]
 ------------------------------------------------------------------------------------------------ */
+
 const removeEvenValues = (arr) => {
-  let odds = arr.filter(num => num % 2);
-  return odds;
+  // Solution code here...
 };
-
-// Split, join, slice, splice
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -249,14 +254,14 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-describe('Testing challenge 6', () => {
+xdescribe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
