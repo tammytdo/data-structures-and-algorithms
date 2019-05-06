@@ -90,7 +90,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  return arr.reduce((a, b) => a - b);
+  let splitString = arr.split('').reduce( (accumulator, value) => {
+    // console.log(accumulator, value); 
+    // console.log(" value: ", value, " accumulator: ", accumulator)
+    return value + accumulator;
+  })
+  return splitString
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -259,7 +264,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return the string with the characters in reverse order', () => {
     expect(reversedString('Code 301')).toStrictEqual('103 edoC');
   });
