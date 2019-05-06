@@ -9,11 +9,11 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-// let totalCount = 0;
-  arr.reduce((accumulator, value, idx) => {
-    accumulator + value;
-    return value[idx];
+  let length = arr.reduce(accumulator => {
+    accumulator++;
+    return accumulator;
   });
+  return length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,15 +72,13 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let charNames = [];
 const returnNames = (arr) => {
-  arr.reduce(arr => {
-    for (let i in arr) {
-      arr.name[i] + arr.name[i++];
-      charNames.push(arr[i]);
-    }
-  });
-  return charNames;
+  let names = arr.reduce((accumulator, value) => {
+    // console.log(accumulator);
+    accumulator.push(value.name);
+    return accumulator;
+  }, [])
+  return names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -248,13 +246,13 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-09.test.js
 ------------------------------------------------------------------------------------------------ */
 
-x('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return the length of the array', () => {
     expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array continaing the names of the characters', () => {
     expect(returnNames(starWarsData)).toStrictEqual([ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]);
     expect(returnNames(starWarsData).length).toStrictEqual(5);
@@ -273,7 +271,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
