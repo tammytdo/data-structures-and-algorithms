@@ -102,18 +102,20 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  const hasChildren = [];
-  Object.values(arr).forEach( val => {
-    if (val.children[character].length > 1){
-      result.push(true);
-    }else{
-      result.push(false);
+  let result = '';
+
+  Object.values(arr).forEach(item => { //2
+    if (Object.values(item)[0] === character) {
+      if (Object.values(item)[2].length) {
+        result = true;
+      } else {
+        result = false;
+      }
     }
-    return result;
   })
+  return result;
 };
 
-// (Object.values.children(character).length = 0) 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -197,7 +199,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
