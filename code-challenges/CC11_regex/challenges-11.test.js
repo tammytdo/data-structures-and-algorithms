@@ -32,7 +32,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  let regex = /^(\w\d)?\.?(\w\d)+@\w+\.(net|com|org)$/;
+  let regex = /^([a-z\d]+)\.?([a-z\d]+)@([a-z]+)\.([a-z]{3,8})$/;
   return regex.test(email);
 }
 
@@ -58,7 +58,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  let regex = /^((\(\d{3}\))||(\d{3}))[\s-]?(\d{3})[\s-]?(\d{4})$/;
+  return regex.test(phoneNumber)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,7 +128,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should match the acceptable phone number formats', () => {
     expect(validatePhoneNumber('(555) 555-5555')).toBeTruthy();
     expect(validatePhoneNumber('555 555-5555')).toBeTruthy();
