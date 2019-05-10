@@ -1,1 +1,1 @@
-Repository for daily code challenges and pair programming.
+Repository for daily code challenges.
