@@ -1,6 +1,6 @@
-Table of Contents
+# Table of Contents
 
-Code challenges
+## Code challenges  
 *Chaining  
 *Regex  
 *Dimension  
