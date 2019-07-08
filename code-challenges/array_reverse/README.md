@@ -11,4 +11,4 @@ In the second approach I first created an empty list. Then used the len() functi
 
 
 ## Solution
-![Whiteboard Solution](link-to-image)
+![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/array_reverse.JPG)
