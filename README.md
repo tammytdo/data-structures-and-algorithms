@@ -1,18 +1,18 @@
 Table of Contents
 
 Code challenges
-*Chaining 
-*Regex
-*Dimension
-*Strings
-*Combo	 
+*Chaining  
+*Regex  
+*Dimension  
+*Strings  
+*Combo	
 *For-each	 
-*Value-vs-reference 
+*Value-vs-reference  
 *Sort	 
-*RegEx	 
-*String methods 
+*RegEx   
+*String methods  
 *Objects	 
-*Map 
-*Filter 
-*Reduce
-*Array reverse
+*Map  
+*Filter  
+*Reduce  
+*Array reverse  
