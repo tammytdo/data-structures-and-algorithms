@@ -8,4 +8,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 Approach included length calculation, midpoint calculation, round function, slicing, and returning a new array. Big O calculation is O(1).
 
 ## Solution
-![Whiteboard Solution](LINK)
+![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/array_shift.jpg)
