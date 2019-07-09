@@ -13,6 +13,11 @@ def test_odd_len_array():
     actual = [4,8,15,16,23,42]
     assert expected == actual
 
+def test_expected failure():
+    expected = [2,4,6,8], 5
+    actual = [2,4,6,8,5]
+    assert expected == actual
+
 def test_empty_len_array():
     expected = []
     actual = []
