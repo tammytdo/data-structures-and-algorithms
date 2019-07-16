@@ -6,15 +6,15 @@ class LinkedList():
     def insert(self, value):
         self.head = Node(value, self.head)
 
-    def includes(self, search_value):
+    def includes(self, key_value):
         current = self.head
-        if self.head == None:
-            return False
-        while current.next:
-            if current.value == search_value:
+        while current:
+            if current.value == key_value:
                 return True
-            if current.value != search_value:
-                current = current.next
+            if current.value != key_value:
+    
+                new_current = current.next
+                current = new_current
         return False
 
     def __str__(self):

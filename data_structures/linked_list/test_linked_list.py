@@ -25,7 +25,7 @@ def test_includes():
     ll.insert('indigo')
     ll.insert('blue')
     assert ll.includes('indigo') == True
-    assert ll.includes(4) == False
+    assert ll.includes('rojo') == False
 
 def test__str__():
     ll = LinkedList()
@@ -34,5 +34,3 @@ def test__str__():
     ll.insert('blue')
     assert ll.__str__() == 'blue indigo violet '
 
-
-# Can properly return a collection of all the values that exist in the linked list
