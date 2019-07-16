@@ -34,3 +34,10 @@ def test__str__():
     ll.insert('blue')
     assert ll.__str__() == 'blue indigo violet '
 
+# def test_append():
+#     ll = LinkedList()
+#     ll.insert('violet')
+#     ll.insert('indigo')
+#     ll.insert('blue')
+#     ll.append('green')
+#     assert ll.head.next.next.next.value == 'green'
