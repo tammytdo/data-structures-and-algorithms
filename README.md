@@ -16,3 +16,6 @@
 *Filter  
 *Reduce  
 *Array reverse  
+*Array shift  
+*Array binary search
+*Linked List
