@@ -41,9 +41,9 @@ class LinkedList():
             current = current.next
         current.next = new_node
 
-    def insert_before(self, key, insert_value):
-        new_node = Node(insert_value)
-        new_current = self.head
+    def insert_before(self, key, value):
+        new_node = Node(value)
+        current = self.head
 
         if current.value == key:
             new_node.next = self.head
@@ -58,19 +58,12 @@ class LinkedList():
         return ValueError
 
     
-    def insert_after(self, key, insert_value):
-        #define the new node
+    def insert_after(self, key, value):
         new_node = Node(value)
-
-        #define the head
         current = self.head
 
-        #loop through nodes
-        #while a value exists and is not equal to the key:
         while current.value != key:
-            #if there is a next:
             if current.next:
-                #set the new current to current.next
                 current = current.next
             else:
                 break
@@ -81,7 +74,7 @@ class LinkedList():
     
 
 class Node():
-    def __init__(self, value, next):
+    def __init__(self, value, next=None):
         self.value = value
         self.next = next
 
