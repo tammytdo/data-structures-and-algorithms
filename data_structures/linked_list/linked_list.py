@@ -71,7 +71,28 @@ class LinkedList():
         if current.value == key:
             new_node.next = current.next
             current.next = new_node
-    
+
+    def kth_from_end(self, k):
+        current = self.head
+
+        if current:
+            count_length = 0 
+
+            while current.next != None:
+                count_length += 1
+                current = current.next
+
+            n = count_length - k
+            counter_two = 0
+            current = self.head
+
+            while counter_two < n:
+                counter_two += 1
+                current = current.next
+            
+            return current.value
+        return None
+
 
 class Node():
     def __init__(self, value, next=None):
