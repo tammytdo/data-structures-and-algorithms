@@ -1,8 +1,6 @@
 from linked_list import LinkedList, Node
+import pytest
 
-# Write tests to prove the following functionality:
-
-# Can successfully instantiate an empty linked list
 def test_exists(): 
     assert LinkedList
 
@@ -34,3 +32,38 @@ def test__str__():
     ll.insert('blue')
     assert ll.__str__() == 'blue indigo violet '
 
+def test_append():
+    ll = LinkedList()
+    ll.insert('violet')
+    ll.insert('indigo')
+    ll.insert('blue')
+    ll.append('green')
+    assert ll.head.next.next.next.value =='green'
+
+def test_includes_before():
+    ll = LinkedList()
+    ll.insert('violet')
+    ll.insert('indigo')
+    ll.insert('blue')
+    ll.insert_before('violet', 'green')
+    assert ll.head.next.next.value == 'green'
+
+def test_insert_after():
+    ll = LinkedList()
+    ll.insert('violet')
+    ll.insert('indigo')
+    ll.insert('blue')
+    ll.insert_after('indigo', 'green')
+    assert ll.head.next.next.value == 'green'
+
+def test_kth_from_end():
+    assert True
+
+def test_kth_from_end():
+    ll = LinkedList()
+    ll.insert('violet')
+    ll.insert('indigo')
+    ll.insert('green')
+    ll.insert('blue')
+    ll.kth_from_end(1)
+    assert ll.head.next.value == 'green'
