@@ -3,6 +3,7 @@ import math
 list1 = [1,2,3,4,5]
 val1 = 16
 
+
 def insert_shift_array(lst, value):
     length = len(lst)
     half = length / 2
