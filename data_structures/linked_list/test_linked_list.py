@@ -56,3 +56,14 @@ def test_insert_after():
     ll.insert_after('indigo', 'green')
     assert ll.head.next.next.value == 'green'
 
+def test_kth_from_end():
+    assert True
+
+def test_kth_from_end():
+    ll = LinkedList()
+    ll.insert('violet')
+    ll.insert('indigo')
+    ll.insert('green')
+    ll.insert('blue')
+    ll.kth_from_end(1)
+    assert ll.head.next.value == 'green'
