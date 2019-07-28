@@ -71,49 +71,7 @@ class LinkedList():
         if current.value == key:
             new_node.next = current.next
             current.next = new_node
-
-    def kth_from_end(self, k, value):
-        new_node = Node(value)
-        current = self.head
-
-        if current:
-            while current.next != None:
-                if current.next == None:
-                    k = current.value
-                    return current.value
-                elif current.next != None:
-                    current = current.next
-            return ValueError
-                
-            
-    def kth_from_end(self, k):
-        
-
-         basic_counter = 0	        basic_counter = 0
-        length = 1	        length = 0
-        current = self.head	        current = self.head
-
-
-         while current.next:	        while current.next:
-            length += 1	            length += 1
-            current = current.next	            current = current.next
-
-
-         k_endpoint = (length - k)	        k_endpoint = ((length + 1) - k)
-
-
-         while basic_counter != k_endpoint:	        while basic_counter != k_endpoint:
-            current = self.head	            current = self.head
-            basic_counter += 1	            basic_counter += 1
-            current = current.next	            current = current.next
-
-
-         return current.next.node_value	        if k >= 1:
-            return current.next.node_value
-        elif k < 1:
-            return self.head.node_value
-
-
+           
 def ll_merge(self, list2):
        head1 = self.head
        head2 = self.head
@@ -141,6 +99,27 @@ def ll_merge(self, list2):
                curr1.next = curr2
                curr2.next = ref1
                return head1
+    
+def kth_from_end(self, k):
+      current = self.head
+
+      if current:
+          count_length = 0 
+
+          while current.next != None:
+              count_length += 1
+              current = current.next
+
+          n = count_length - k
+          counter_two = 0
+          current = self.head
+
+          while counter_two < n:
+              counter_two += 1
+              current = current.next
+
+          return current.value
+      return None
 
 class Node():
     def __init__(self, value, next=None):
