@@ -12,6 +12,3 @@ def test_odd_list():
 
 def test_not_in_list():
     assert binary_search([1,2,3,4,5], 8)
-
-# def test_empty_list():
-#     assert binary_search([], 0)
