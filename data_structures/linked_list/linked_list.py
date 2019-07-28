@@ -71,28 +71,55 @@ class LinkedList():
         if current.value == key:
             new_node.next = current.next
             current.next = new_node
+           
+def ll_merge(self, list2):
+       head1 = self.head
+       head2 = self.head
+       if not head1 and not head2:
+           return 'empty linked list'
+       if head1 and not head2:
+           return head1
+       if not head1 and head2:
+           return head2
+       if head1 and head2:
+           curr1 = head1
+           curr2 = head2
+           while curr1._next is not None and curr2._next is not None:
+               ref1 = curr1._next
+               ref2 = curr2._next
+               curr1._next = curr2
+               curr2._next = ref1
+               curr1 = ref1
+               curr2 = ref2
+           if curr1._next is None and curr2:
+               curr1._next = curr2
+               return head1
+           if curr2._next is None and curr1:
+               ref1 = curr1._next
+               curr1.next = curr2
+               curr2.next = ref1
+               return head1
+    
+def kth_from_end(self, k):
+      current = self.head
 
-    def kth_from_end(self, k):
-        current = self.head
+      if current:
+          count_length = 0 
 
-        if current:
-            count_length = 0 
+          while current.next != None:
+              count_length += 1
+              current = current.next
 
-            while current.next != None:
-                count_length += 1
-                current = current.next
+          n = count_length - k
+          counter_two = 0
+          current = self.head
 
-            n = count_length - k
-            counter_two = 0
-            current = self.head
+          while counter_two < n:
+              counter_two += 1
+              current = current.next
 
-            while counter_two < n:
-                counter_two += 1
-                current = current.next
-            
-            return current.value
-        return None
-
+          return current.value
+      return None
 
 class Node():
     def __init__(self, value, next=None):
