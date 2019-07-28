@@ -13,11 +13,40 @@ To insert before, traverse the nodes until the node.next value matches the key. 
 Time: O(N)
 Space: 0(1)
 
-## Solution - Insert Before
+## Solutions
+### Insert Before
 ![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/insertion_before.jpg)
 
-## Solution - Insert Append
+### Insert Append
 ![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/insertion_append.jpg)
 
-## Solution - Insert After
+### Insert After
 ![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/insertion_after.jpg)
+
+### Merge
+![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/merge_LL.JPG)
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
