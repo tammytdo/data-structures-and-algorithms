@@ -7,7 +7,5 @@
 Implement a Stack and a Queue Data Structure
 
 ## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Added functionality to add and delete some things.
--->
+07-28-2019 8:30pm - Stack class with push, pop, peek methods
+07-28-2019 8:30pm - Queue class with enqueue, dequeue, peek methods
