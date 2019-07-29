@@ -85,12 +85,11 @@ def test_dequeue():
     q.enqueue('1')
     q.enqueue('2')
     q.enqueue('3')
-    q.dequeue()
 
-    assert q.front.value == '2'
-    assert q.front.value.next == '3'
+    assert q.dequeue == '1'
+    assert q.dequeue == '2'
 
-# def test_():
+# def test_peek():
 #     assert ==
 
 # def test_():
@@ -99,7 +98,11 @@ def test_dequeue():
 # def test_():
 #     assert ==
 
-# Can successfully dequeue out of a queue the expected value
+# def test_():
+#     assert ==
+
+# def test_():
+#     assert ==
 # Can successfully peek into a queue, seeing the expected value
 # Can successfully empty a queue after multiple dequeues
 # Can successfully instantiate an empty queue
