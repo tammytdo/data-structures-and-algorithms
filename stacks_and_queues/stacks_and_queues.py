@@ -24,13 +24,18 @@ class Stack:
 
     def push(self, value):
         self._lst.insert(value)
+        self.top = self._lst.head
 
     def pop(self):
-        node_to_pop = self._lst.head
-        self.top = self._lst.head.next
-        self._lst.head = self._lst.head.next
+        if self.top:
+            node_to_pop = self._lst.head
+            self.top = self._lst.head.next
+            self._lst.head = self._lst.head.next
 
-        return node_to_pop.value
+            return node_to_pop.value
+
+        else:
+            return None
 
     def peek(self):
         if self.top:
