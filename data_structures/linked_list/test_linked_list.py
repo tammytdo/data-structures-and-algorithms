@@ -56,6 +56,39 @@ def test_insert_after():
     ll.insert_after('indigo', 'green')
     assert ll.head.next.next.value == 'green'
 
+<<<<<<< HEAD
+def test_merge_lists_exists():
+    assert LinkedList.merge_lists
+
+def test_merge_lists_even_lists():
+    list_a = LinkedList()
+    list_b = LinkedList()
+
+    list_a.insert('3')
+    list_a.insert('2')
+    list_a.insert('1')
+    list_b.insert('c')
+    list_b.insert('b')
+    list_b.insert('a')
+    list_a.merge_lists(list_a, list_b)
+
+    assert list_a.head.value == '1'
+
+def test_merge_lists_uneven_lists():
+    list_a = LinkedList()
+    list_b = LinkedList()
+
+    list_a.insert('4')
+    list_a.insert('3')
+    list_a.insert('2')
+    list_a.insert('1')
+    list_b.insert('b')
+    list_b.insert('a')
+    list_a.merge_lists(list_a, list_b)
+
+    assert list_a.head.value == '1'
+    assert list_a.head.next.value == 'b'
+=======
 def test_kth_from_end():
     assert True
 
@@ -67,3 +100,4 @@ def test_kth_from_end():
     ll.insert('blue')
     ll.kth_from_end(1)
     assert ll.head.next.value == 'green'
+>>>>>>> 4716f618a9e7ad5e39f930445dcb3739cfb897b7
