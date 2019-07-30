@@ -105,9 +105,10 @@ def fizz_buzz_tree(tree):
         else:
             node.value = node.value
 
-    if node.left_child:
-        _visit(node.left_child)
-    if node.right_child:
-        _visit(node.right_child)
+        if node.left_child:
+            _visit(node.left_child)
+        if node.right_child:
+            _visit(node.right_child)
     
-    return _visit(tree.root)
+    _visit(tree.root)
+    return tree
