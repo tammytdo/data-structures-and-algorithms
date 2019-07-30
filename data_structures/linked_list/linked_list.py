@@ -121,9 +121,21 @@ class LinkedList():
             return current.value
         return None
 
+    def merge_lists(self, list_a, list_b):
+        current = list_a.head
+        a_curr = list_a.head
+        b_curr = list_b.head
+
+        while a_curr and b_curr:
+            current.next = b_curr
+            b_curr = b_curr.next
+            current = current.next
+            current.next = a_curr
+            current = current.next
+
+        return current
+
 class Node():
     def __init__(self, value, next=None):
         self.value = value
         self.next = next
-
-
