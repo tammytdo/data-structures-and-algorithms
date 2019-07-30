@@ -11,44 +11,44 @@ class BinaryTree:
     def pre_order(self):
         values = []
 
-        def visit(node):
+        def _visit(node):
             values.append(node.value)
 
             if node.left_child:
-                visit(node.left_child)
+                _visit(node.left_child)
             if node.right_child:
-                visit(node.right_child)
+                _visit(node.right_child)
 
-        visit(self.root)
+        _visit(self.root)
         return values 
 
     def in_order(self):
         values = []
 
-        def visit(node):
-            if node.left_child:
-                visit(node.left_child)
+        def _visit(node):
+            if _visit.left_child:
+                _visit(node.left_child)
 
             values.append(node.value)
 
             if node.right_child:
-                visit(node.right_child)
+                _visit(node.right_child)
             
-        visit(self.root)
+        _visit(self.root)
         return values
 
     def post_order(self):
         values = []
         
-        def visit(node):
+        def _visit(node):
             if node.left_child:
-                visit(node.left_child)
+                _visit(node.left_child)
             if node.right_child:
-                visit(node.right_child)
+                _visit(node.right_child)
             
             values.append(node.value)
         
-        visit(self.root)
+        _visit(self.root)
         return values
 
 class BinarySearchTree:
@@ -90,3 +90,24 @@ class BinarySearchTree:
         elif value > current_node.value and current_node.right_child != None:
             self._find_node(value, current_node.right_child)
         return False
+
+def fizz_buzz_tree(tree):
+
+    def _visit(node):
+        if node.value % 3 == 0 and node.value % 5 == 0:
+            node.value = 'FizzBuzz'
+
+        elif node.value % 3 == 0:
+            node.value = 'fizz'
+        
+        elif node.value % 5 == 0:
+            node.value = 'buzz'
+        else:
+            node.value = node.value
+
+    if node.left_child:
+        _visit(node.left_child)
+    if node.right_child:
+        _visit(node.right_child)
+    
+    return _visit(tree.root)
