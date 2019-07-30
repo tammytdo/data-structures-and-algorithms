@@ -9,15 +9,41 @@ This program takes in an array and returns it in reverse order.
 *Define a method called __str__ which takes in no arguments and returns a string representing all the values in the Linked List.
 
 ## Approach & Efficiency
-To insert before, traverse the nodes until the node.next value matches the key. Set the new node's next value to the key node. Insert the new node as the current node's next. 
-Time: O(N)
-Space: 0(1)
 
-## Solution - Insert Before
+## Solutions
+### Insert Before
 ![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/insertion_before.jpg)
 
-## Solution - Insert Append
+### Insert Append
 ![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/insertion_append.jpg)
 
-## Solution - Insert After
+### Insert After
 ![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/insertion_after.jpg)
+
+### Merge
+![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/merge_LL.JPG)
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+
+### 
+![Whiteboard Solution]()
+

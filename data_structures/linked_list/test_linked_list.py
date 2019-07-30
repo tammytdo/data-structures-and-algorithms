@@ -58,15 +58,6 @@ def test_insert_after():
 def test_kth_from_end_exists():
     assert LinkedList.kth_from_end
 
-def test_kth_from_end():
-    ll = LinkedList()
-    ll.insert('violet')
-    ll.insert('indigo')
-    ll.insert('green')
-    ll.insert('blue')
-    ll.kth_from_end(1)
-    assert ll.head.next.value == 'green'
-
 def test_merge_lists_exists():
     assert LinkedList.merge_lists
 
@@ -98,3 +89,12 @@ def test_merge_lists_uneven_lists():
 
     assert list_a.head.value == '1'
     assert list_a.head.next.value == 'b'
+
+def test_kth_from_end():
+    ll = LinkedList()
+    ll.insert('violet')
+    ll.insert('indigo')
+    ll.insert('green')
+    ll.insert('blue')
+    ll.kth_from_end(1)
+    assert ll.head.next.value == 'green'
