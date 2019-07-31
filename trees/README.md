@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Name
 
 **Author**: Your Name(s) Goes Here
@@ -20,3 +21,23 @@
 
 01-01-2001 4:59pm - Added functionality to add and delete some things.
 -->
+=======
+# Tree
+
+**Author**: Tammy Do
+**Version**: 1.0.0
+
+## Overview
+Implement a Tree
+
+### Create a BinaryTree class  
+Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.  
+
+### Create a BinarySearchTree class
+Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.  
+
+Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.  
+
+## Architecture
+Python 3
+>>>>>>> dc8323f712e825bf653961e995910f33bf747e44

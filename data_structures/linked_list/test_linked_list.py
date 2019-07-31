@@ -1,5 +1,4 @@
 from linked_list import LinkedList, Node
-import pytest
 
 def test_exists(): 
     assert LinkedList
@@ -56,7 +55,9 @@ def test_insert_after():
     ll.insert_after('indigo', 'green')
     assert ll.head.next.next.value == 'green'
 
-<<<<<<< HEAD
+def test_kth_from_end_exists():
+    assert LinkedList.kth_from_end
+
 def test_merge_lists_exists():
     assert LinkedList.merge_lists
 
@@ -88,9 +89,6 @@ def test_merge_lists_uneven_lists():
 
     assert list_a.head.value == '1'
     assert list_a.head.next.value == 'b'
-=======
-def test_kth_from_end():
-    assert True
 
 def test_kth_from_end():
     ll = LinkedList()
@@ -100,4 +98,3 @@ def test_kth_from_end():
     ll.insert('blue')
     ll.kth_from_end(1)
     assert ll.head.next.value == 'green'
->>>>>>> 4716f618a9e7ad5e39f930445dcb3739cfb897b7
