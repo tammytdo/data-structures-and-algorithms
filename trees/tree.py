@@ -11,6 +11,17 @@ class BinaryTree:
     def pre_order(self):
         values = []
 
+<<<<<<< HEAD
+        def visit(node):
+            values.append(node.value)
+
+            if node.left_child:
+                visit(node.left_child)
+            if node.right_child:
+                visit(node.right_child)
+
+        visit(self.root)
+=======
         def _visit(node):
             values.append(node.value)
 
@@ -20,26 +31,50 @@ class BinaryTree:
                 _visit(node.right_child)
 
         _visit(self.root)
+>>>>>>> dc8323f712e825bf653961e995910f33bf747e44
         return values 
 
     def in_order(self):
         values = []
 
+<<<<<<< HEAD
+        def visit(node):
+            if node.left_child:
+                visit(node.left_child)
+=======
         def _visit(node):
             if _visit.left_child:
                 _visit(node.left_child)
+>>>>>>> dc8323f712e825bf653961e995910f33bf747e44
 
             values.append(node.value)
 
             if node.right_child:
+<<<<<<< HEAD
+                visit(node.right_child)
+            
+        visit(self.root)
+=======
                 _visit(node.right_child)
             
         _visit(self.root)
+>>>>>>> dc8323f712e825bf653961e995910f33bf747e44
         return values
 
     def post_order(self):
         values = []
         
+<<<<<<< HEAD
+        def visit(node):
+            if node.left_child:
+                visit(node.left_child)
+            if node.right_child:
+                visit(node.right_child)
+            
+            values.append(node.value)
+        
+        visit(self.root)
+=======
         def _visit(node):
             if node.left_child:
                 _visit(node.left_child)
@@ -49,12 +84,24 @@ class BinaryTree:
             values.append(node.value)
         
         _visit(self.root)
+>>>>>>> dc8323f712e825bf653961e995910f33bf747e44
         return values
 
 class BinarySearchTree:
     def __init__(self):
         self.root = None
 
+<<<<<<< HEAD
+    def add(self, value):
+        pass
+        
+    def contains(self, value):
+        pass
+
+        
+# Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+# Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+=======
     # adds a new node with that value in the correct location
     def add(self, value):
         if self.root is None:
@@ -112,3 +159,4 @@ def fizz_buzz_tree(tree):
     
     _visit(tree.root)
     return tree 
+>>>>>>> dc8323f712e825bf653961e995910f33bf747e44
