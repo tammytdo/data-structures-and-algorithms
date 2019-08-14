@@ -24,7 +24,7 @@ def merge(left, right, lst):
     k = 0
 
     while i < len(left) and j < len(right):
-        if left[i] <= right[i]:
+        if left[i] <= right[j]:
             lst[k] = left[i]
             i += 1
 
@@ -34,12 +34,16 @@ def merge(left, right, lst):
 
         k += 1
 
-    while i < len(left): 
-        lst[k] = left[i] 
-        i += 1
-        k += 1
-        
-    while j < len(right): 
-        lst[k] = right[j] 
-        j += 1
-        k += 1
+    #    set remaining entries in arr to remaining values in right
+    if i == len(left):
+        for _ in right[j:]:
+            lst[k] = right[j] 
+            j += 1
+            k += 1
+
+    #    set remaining entries in arr to remaining values in left
+    else: 
+        for _ in left[i:]:        
+            lst[k] = left[i] 
+            i += 1
+            k += 1

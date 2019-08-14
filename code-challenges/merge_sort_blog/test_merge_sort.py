@@ -16,17 +16,14 @@ def test_list_with_values_sorted():
     lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     assert merge_sort(lst) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-@pytest.mark.skip()
 def test_list_with_values_unsorted():
     lst = [1, 3, 2, 4, 5, 7, 6, 8, 9, 10]
     assert merge_sort(lst) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-@pytest.mark.skip()
 def test_list_with_values_sorted_dupes():
-    lst = [1, 3, 3, 3, 5, 2, 4, 6, 7, 8, 9, 10]
+    lst = [1, 3, 3, 3, 2, 4, 5, 6, 7, 8, 9, 10]
     assert merge_sort(lst) == [1, 2, 3, 3, 3, 4, 5, 6, 7, 8, 9, 10]
 
-@pytest.mark.skip()
 def test_list_with_values_unsorted_dupes():
     lst = [1, 3, 5, 3, 2, 3, 4, 6]
     assert merge_sort(lst) == [1, 2, 3, 3, 3, 4, 5, 6]
