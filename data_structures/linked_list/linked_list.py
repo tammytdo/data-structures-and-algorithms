@@ -4,9 +4,15 @@ class LinkedList():
         self.head = None
     
     def insert(self, value):
+        '''
+        Takes a value as an argument and adds a new node with that value to the head of the list.
+        '''
         self.head = Node(value, self.head)
 
     def includes(self, key_value):
+        '''
+        Takes a value as an argument and returns a boolean indicating whether that value exists in the list.
+        '''
         current = self.head
         while current:
             if current.value == key_value:
@@ -18,6 +24,9 @@ class LinkedList():
         return False
 
     def __str__(self):
+        '''
+        Returns a string representing all the values in the Linked List.
+        '''
         if self.head.value == None:
             return 'Error string'
         current = self.head
@@ -107,29 +116,6 @@ class LinkedList():
             count_length = 0 
 
             while current.next != None:
-<<<<<<< HEAD
-                if current.next == None:
-                    k = current.value
-                    return current.value
-                elif current.next != None:
-                    current = current.next
-            return ValueError
-
-    def merge_lists(self, list_a, list_b):
-        current = list_a.head
-        a_curr = list_a.head
-        b_curr = list_b.head
-
-        while a_curr and b_curr:
-            current.next = b_curr
-            b_curr = b_curr.next
-            current = current.next
-            current.next = a_curr
-            current = current.next
-
-        return current
-
-=======
                 count_length += 1
                 current = current.next
 
@@ -143,7 +129,6 @@ class LinkedList():
 
             return current.value
         return None
->>>>>>> 4716f618a9e7ad5e39f930445dcb3739cfb897b7
 
     def merge_lists(self, list_a, list_b):
         current = list_a.head
