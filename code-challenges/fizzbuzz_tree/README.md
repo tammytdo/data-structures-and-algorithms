@@ -9,3 +9,6 @@ Determine weather or not the value of each node is divisible by 3, 5 or both, an
 -If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
 
 Return the tree with its new values.
+
+## Whiteboard
+![whiteboard image of fizzbuzz tree](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/fizz_buzz_tree.jpg)
