@@ -2,36 +2,69 @@ from tree import Node, BinaryTree, BinarySearchTree
 import pytest
 
 @pytest.fixture()
-def create_tree():
-    one = Node(1)
-    five = Node(5)
+def tree():
     ten = Node(10)
-    fifteen = Node(15)
+    five = Node(5)
+    two = Node(2)
+    seven = Node(7)
+    six = Node(6)
+    nine = Node(9)
     twenty = Node(20)
-    twentyfive = Node(25)
+    fifteen = Node(15)
     thirty = Node(30)
-    thirtyfive = Node(35)
-    fourty = Node(40)
 
-def test_BinaryTree_single_root():
-    # assert BinaryTree().root == one
+    ten.left = five
+    ten.right = twenty
+    five.left = two
+    five.right = seven
+    seven.left = six
+    seven.right = nine
+    twenty.left = fifteen
+    twenty.right = thirty
+    
+    return BinarySearchTree(ten)
 
-def test_BinaryTree_exists():
+def test_classes_exist():
+    assert Node
     assert BinaryTree
-
-def test_BinarySearchTree_exists():
     assert BinarySearchTree
 
-# Can successfully instantiate a tree with a single root node
+def test_BinaryTree_empty():
+    assert BinaryTree().root == None
 
+def test_BinaryTree_with_root():
+    node = Node(10)
+    tree = BinaryTree(node)
 
-    assert BinaryTree
+    assert tree.root.value == 10
 
-def test_BinarySearchTree_single_root():
-    assert BinarySearchTree
+def test_BinaryTree_root_left():
+    node = Node(10)
+    node.left = Node(5)
+    node.right = Node(20)
+    tree = BinaryTree(node)
+    
+    assert tree.root.left.value == 5
 
+def test_BinaryTree_root_right():
+    node = Node(10)
+    node.left = Node(5)
+    node.right = Node(20)
+    tree = BinaryTree(node)
+    
+    assert tree.root.right.value == 20
 
-# Can successfully add a left child and right child to a single root node
-# Can successfully return a collection from a preorder traversal
-# Can successfully return a collection from an inorder traversal
-# Can successfully return a collection from a postorder traversal
+def test_BinaryTree_contains(tree):
+    assert tree.contains(10) == True
+    assert tree.contains(20) == True
+    assert tree.contains(30) == True
+    assert tree.contains(11) == False
+
+def test_pre_order(tree):
+    assert tree.pre_order() == [10, 5, 2, 7, 6, 9, 20, 15, 30]
+
+def test_in_order(tree):
+    assert tree.in_order() == [2, 5, 6, 7, 9, 10, 15, 20, 30]
+
+def test_post_order(tree):
+    assert tree.post_order() == [2, 6, 9, 7, 5, 15, 30, 20, 10]
