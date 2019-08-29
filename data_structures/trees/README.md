@@ -1,43 +1,24 @@
-<<<<<<< HEAD
-# Project Name
+# Trees
+A binary tree is a type of tree that contains up to 2 children. Each child node can only have two children.
 
-**Author**: Your Name(s) Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+A binary search tree is a type of tree that contains up to 2 children with structure added to it. All child values that are smaller than the root are placed to the left, and all values that are larger than the root are placed to the right.
 
-## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 401 class. (i.e. What's your problem domain?) -->
+## Challenge
+Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 
-## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Create a BinaryTree class
+-Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
 
-## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. This is also an area which you can include any visuals; flow charts, example usage gifs, screen captures, etc.-->
+Create a BinarySearchTree class
+-Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+-Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 ## API
-<!-- Provide detailed instructions for your applications usage. This should include any methods or endpoints available to the user/client/developer. Each section should be formatted to provide clear syntax for usage, example calls including input data requirements and options, and example responses or return values. -->
-
-## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Added functionality to add and delete some things.
--->
-=======
-# Tree
-
-**Author**: Tammy Do
-**Version**: 1.0.0
-
-## Overview
-Implement a Tree
-
-### Create a BinaryTree class  
-Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.  
-
-### Create a BinarySearchTree class
-Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.  
-
-Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.  
-
-## Architecture
-Python 3
->>>>>>> dc8323f712e825bf653961e995910f33bf747e44
+-add(): adds new node to the binary search tree in its correct place
+-contains(): returns boolean of whether node is in tree
+-pre_order(): Returns a list of traversed nodes in the order of self, left, right.
+-in_order(): Returns a list of traversed nodes in the order of left, self, right.
+-post_order(): Returns a list of traversed nodes in the order of left, right, self.
