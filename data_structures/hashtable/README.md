@@ -20,3 +20,6 @@ The structure of this hashtable is a list. The key and value are stored as nodes
 -contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
 
 -hash: takes in an arbitrary key and returns an index in the collection.
+
+## Whiteboard
+![Hashtable whiteboarding]()
