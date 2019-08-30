@@ -1,7 +1,6 @@
 import pytest
 from hashtable import HashTable
 
-
 def test_exists():
     assert HashTable
 
