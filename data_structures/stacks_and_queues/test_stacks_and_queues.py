@@ -1,3 +1,4 @@
+import pytest
 from stacks_and_queues import LinkedList, Node, Stack, Queue
 
 
@@ -68,8 +69,9 @@ def test_stack_peek():
 
     assert s.peek() == '2'
 
-def test_instantiate_empty_queue():
-    assert Queue()
+def test_empty_queue():
+    q = Queue()
+    assert q.front == None
 
 def test_enqueue():
     q = Queue()
@@ -77,32 +79,15 @@ def test_enqueue():
     q.enqueue('2')
     q.enqueue('3')
 
-    assert q.front.value == '1'
-    assert q.front.value.next == '2'
+    assert q.peek() == '1'
 
 def test_dequeue():
     q = Queue()
     q.enqueue('1')
     q.enqueue('2')
     q.enqueue('3')
-
-    assert q.dequeue == '1'
-    assert q.dequeue == '2'
-
-# def test_peek():
-#     assert ==
-
-# def test_():
-#     assert ==
-
-# def test_():
-#     assert ==
-
-# def test_():
-#     assert ==
-
-# def test_():
-#     assert ==
-# Can successfully peek into a queue, seeing the expected value
-# Can successfully empty a queue after multiple dequeues
-# Can successfully instantiate an empty queue
+    
+    assert q.dequeue() == '1'
+    assert q.dequeue() == '2'
+    assert q.dequeue() == '3'
+    assert q.peek() == None

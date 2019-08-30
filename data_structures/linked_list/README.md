@@ -22,28 +22,3 @@ This program takes in an array and returns it in reverse order.
 
 ### Merge
 ![Whiteboard Solution](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/assets/merge_LL.JPG)
-
-### 
-![Whiteboard Solution]()
-
-### 
-![Whiteboard Solution]()
-
-### 
-![Whiteboard Solution]()
-
-### 
-![Whiteboard Solution]()
-
-### 
-![Whiteboard Solution]()
-
-### 
-![Whiteboard Solution]()
-
-### 
-![Whiteboard Solution]()
-
-### 
-![Whiteboard Solution]()
-

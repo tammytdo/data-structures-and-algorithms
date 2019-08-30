@@ -10,12 +10,6 @@ class LinkedList:
     def insert(self, value):
         self.head = Node(value, self.head)
 
-    def append(self, value):
-        new_node = Node(value)
-        current = self.head
-        while current.next != None:
-            current = current.next
-        current.next = new_node
 
 class Stack:
     def __init__(self):
@@ -39,9 +33,9 @@ class Stack:
 
     def peek(self):
         if self.top:
-            return self.top.value 
+            return self.top and self.top.value
         else:
-            return None
+            raise ValueError
 
 class Queue:
     
@@ -54,12 +48,7 @@ class Queue:
         node = Node(value)
          
         if self.front:
-            while self.front.next:
-                placeholder = self.front 
-                placeholder.next = self.front.next
-                placeholder = placeholder.next
-            self.back = self.front
-            self.back.next = node.value
+            self.back.next = node
             self.back = node
 
         else:

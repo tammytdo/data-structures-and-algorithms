@@ -7,7 +7,7 @@ verify_ssl = true
 pylint = "*"
 
 [packages]
-ptw = "*"
+pytest-watch = "*"
 pytest = "*"
 
 [requires]
