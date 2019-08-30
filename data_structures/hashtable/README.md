@@ -22,4 +22,4 @@ The structure of this hashtable is a list. The key and value are stored as nodes
 -hash: takes in an arbitrary key and returns an index in the collection.
 
 ## Whiteboard
-![Hashtable whiteboarding]()
+![Hashtable whiteboarding](https://github.com/tammytdo/data-structures-and-algorithms/blob/master/hashtable.jpg)
