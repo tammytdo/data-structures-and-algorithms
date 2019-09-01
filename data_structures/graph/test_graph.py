@@ -1,5 +1,5 @@
-import pytest
 from graph import Graph, Vertex
+import pytest
 
 @pytest.fixture
 def graph_g():
