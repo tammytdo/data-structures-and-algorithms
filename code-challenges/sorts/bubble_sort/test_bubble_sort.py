@@ -19,7 +19,7 @@ def test_one_neg_value():
     assert bubble_sort([-2]) == [-2]
 
 def test_two_neg_values():
-    assert bubble_sort([-2, -4]) == [4, -2]
+    assert bubble_sort([-2, -4]) == [-4, -2]
 
 def test_six_neg_values():
     assert bubble_sort([-4,-8,-12,-2,-6,-10]) == [-12,-10,-8,-6,-4,-2]
